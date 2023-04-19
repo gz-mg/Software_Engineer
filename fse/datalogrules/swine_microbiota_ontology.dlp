@@ -1,0 +1,63 @@
+@prefix : <>
+@prefix class: <http://unisa.edu.au/KSE.owl/class#>
+@prefix attribute: <http://unisa.edu.au/KSE.owl/attribute#>
+@prefix relationship: <http://unisa.edu.au/KSE.owl/relationship#>
+
+
+class:Swine(X):- :fsmm.swine(X,X1,X3,X4,X5,X6,X7).
+class:Microbiota(X):- :fsmm.microbe(X,X2,X3,X4,X5,X6,X7,X8,X9,X10).
+class:Gene(X):- :gene_info.gene(X,X2).
+class:Gene_KEGG_Info(X):- :gene_info.gene_kegg_info(X,X2,X3,X4).
+relationship:is_host_ofQ1(X,Y,Z):- :relationship_entity.is_host_of(X,Y,Z).
+attribute:p_value_dpf_tpf_difference(X,Y):- :fsmm.microbe(X,X2,X3,X4,X5,X6,X7,X8,Y,X10).
+attribute:swine_id(X,Y):- :fsmm.swine(X,Y,X3,X4,X5,X6,X7).
+attribute:microbe_name(X,Y):- :fsmm.microbe(X,X2,Y,X4,X5,X6,X7,X8,X9,X10).
+attribute:microbe_time(X,Y):- :fsmm.microbe(X,X2,X3,X4,Y,X6,X7,X8,X9,X10).
+relationship:changes_the_expression_by_microbiotaQ1(X,Y,Z):- :relationship_entity.change_the_expression_by_microbiota(X,Y,Z).
+attribute:gene_symbol(X,Y):- :gene_info.gene(X,Y).
+relationship:has_gene_kegg_infoQ1(X,Y,Z):- :relationship_entity.has_gene_kegg_info(X,Y,Z).
+attribute:gene_kegg_pathway(X,Y):- :gene_info.gene_kegg_info(X,X2,Y,X4).
+
+class:Swine(X):- :fsmm.swine(X,X1,X3,X4,X5,X6,X7).
+class:Microbiota(X):- :fsmm.microbe(X,X2,X3,X4,X5,X6,X7,X8,X9,X10).
+class:Gene(X):- :gene_info.gene(X,X2).
+class:Gene_KEGG_Info(X):- :gene_info.gene_kegg_info(X,X2,X3,X4).
+relationship:is_host_ofQ2(X,Y,Z):- :relationship_entity.is_host_of(X,Y,Z).
+attribute:group(X,Y):- :fsmm.microbe(X,X2,X3,Y,X5,X6,X7,X8,X9,X10).
+attribute:p_age_difference(X,Y):- :fsmm.microbe(X,X2,X3,X4,X5,X6,X7,X8,X9,Y).
+attribute:microbe_name(X,Y):- :fsmm.microbe(X,X2,Y,X4,X5,X6,X7,X8,X9,X10).
+attribute:microbe_time(X,Y):- :fsmm.microbe(X,X2,X3,X4,Y,X6,X7,X8,X9,X10).
+relationship:changes_the_expression_by_microbiotaQ2(X,Y,Z):- :relationship_entity.change_the_expression_by_microbiota(X,Y,Z).
+attribute:gene_symbol(X,Y):- :gene_info.gene(X,Y).
+relationship:has_gene_kegg_infoQ2(X,Y,Z):- :relationship_entity.has_gene_kegg_info(X,Y,Z).
+attribute:gene_kegg_pathway(X,Y):- :gene_info.gene_kegg_info(X,X2,Y,X4).
+
+
+
+class:Swine(X):- :fsmm.swine(X,X1,X3,X4,X5,X6,X7).
+class:Microbiota(X):- :fsmm.microbe(X,X2,X3,X4,X5,X6,X7,X8,X9,X10).
+class:Gene(X):- :gene_info.gene(X,X2).
+class:Gene_KEGG_Info(X):- :gene_info.gene_kegg_info(X,X2,X3,X4).
+relationship:is_host_ofQ3(X,Y,Z):- :relationship_entity.is_host_of(X,Y,Z).
+attribute:group(X,Y):- :fsmm.microbe(X,X2,X3,Y,X5,X6,X7,X8,X9,X10).
+attribute:p_age_difference(X,Y):- :fsmm.microbe(X,X2,X3,X4,X5,X6,X7,X8,X9,Y).
+attribute:taxonomy(X,Y):- :fsmm.microbe(X,Y,X3,X4,X5,X6,X7,X8,X9,X10).
+attribute:microbe_name(X,Y):- :fsmm.microbe(X,X2,Y,X4,X5,X6,X7,X8,X9,X10).
+attribute:microbe_time(X,Y):- :fsmm.microbe(X,X2,X3,X4,Y,X6,X7,X8,X9,X10).
+relationship:changes_the_expression_by_microbiotaQ3(X,Y,Z):- :relationship_entity.change_the_expression_by_microbiota(X,Y,Z).
+attribute:gene_symbol(X,Y):- :gene_info.gene(X,Y).
+relationship:has_gene_kegg_infoQ3(X,Y,Z):- :relationship_entity.has_gene_kegg_info(X,Y,Z).
+attribute:gene_kegg_pathway(X,Y):- :gene_info.gene_kegg_info(X,X2,Y,X4).
+
+
+class:Swine(X):- :fsmm.swine(X,X2,X3,X4,X5,X6,X7).
+class:Metabolome(X):- :fsmm.metabolism(X,X2,X3,X4,X5,X6,X7,X8).
+class:Metabolome_HMDB_info(X):- :gene_info.metabolism_hmdb_info(X,X2,X3,X4).
+relationship:generatesQ4(X,Y,Z):- :relationship_entity.generates(X,Y,Z).
+attribute:ages(X,Y):- :fsmm.swine(X,X2,X3,X4,Y,X6,X7).
+attribute:metabolome_difference(X,Y):- :fsmm.metabolism(X,X2,X3,X4,X5,X6,X7,X8,Y).
+attribute:metabolism_name(X,Y):- :fsmm.metabolism(X,Y,X3,X4,X5,X6,X7,X8,X9).
+attribute:metabolism_time(X,Y):- :fsmm.metabolism(X,X2,X3,X4,X5,X6,X7,Y,X9).
+relationship:has_hmdb_infoQ4(X,Y,Z):- :relationship_entity.has_hmdb_info(X,Y,Z).
+attribute:metabolome_pathway(X,Y):- :gene_info.metabolism_hmdb_info(X,X2,Y,X4).
+attribute:metabolome_pathway_url(X,Y):- :gene_info.metabolism_hmdb_info(X,X2,X3,Y).
